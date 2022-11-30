@@ -87,7 +87,7 @@ namespace C968BFM1
 
             int id = Int32.Parse(txtModifyPartID.Text);
             string name = txtModifyPartName.Text;
-            price = Decimal.Parse(txtModifyPartPrice.Text.Substring(1));
+            price = Decimal.Parse(txtModifyPartPrice.Text);
             minStock = Int32.Parse(txtModifyPartMin.Text);
             maxStock = Int32.Parse(txtModifyPartMax.Text);
             invInStock = Int32.Parse(txtModifyPartInventory.Text);

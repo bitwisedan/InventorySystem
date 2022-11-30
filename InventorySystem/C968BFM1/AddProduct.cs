@@ -92,7 +92,7 @@ namespace C968BFM1
 
             string name = txtAddProdName.Text;
             inventory = Int32.Parse(txtAddProdInventory.Text);
-            price = Decimal.Parse(txtAddProdPrice.Text.Substring(1));
+            price = Decimal.Parse(txtAddProdPrice.Text);
             min = Int32.Parse(txtAddProdMin.Text);
             max = Int32.Parse(txtAddProdMax.Text);
 

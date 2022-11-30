@@ -65,7 +65,7 @@ namespace C968BFM1
 
 
             string name = txtAddPartName.Text;
-            price = Decimal.Parse(txtAddPartPrice.Text.Substring(1));
+            price = Decimal.Parse(txtAddPartPrice.Text);
             minStock = Int32.Parse(txtAddPartMin.Text);
             maxStock = Int32.Parse(txtAddPartMax.Text);
             invInStock = Int32.Parse(txtAddPartInventory.Text);

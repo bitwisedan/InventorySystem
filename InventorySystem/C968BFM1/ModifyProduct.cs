@@ -106,7 +106,7 @@ namespace C968BFM1
                 min = Int32.Parse(txtModifyProdMin.Text);
                 max = Int32.Parse(txtModifyProdMax.Text);
                 inventory =Int32.Parse(txtModifyProdInventory.Text);
-                price = Decimal.Parse(txtModifyProdPrice.Text.Substring(1));
+                price = Decimal.Parse(txtModifyProdPrice.Text);
             }
             catch
             {
@@ -117,7 +117,7 @@ namespace C968BFM1
             int id = Int32.Parse(txtModifyProdID.Text);
             string name = txtModifyProdName.Text;
             inventory = Int32.Parse(txtModifyProdInventory.Text);
-            price = Decimal.Parse(txtModifyProdPrice.Text.Substring(1));
+            price = Decimal.Parse(txtModifyProdPrice.Text);
             min = Int32.Parse(txtModifyProdMin.Text);
             max = Int32.Parse(txtModifyProdMax.Text);
 
@@ -143,7 +143,7 @@ namespace C968BFM1
             int prodID = int.Parse(txtModifyProdID.Text);
             Inventory.UpdateProduct(prodID, updatedProduct);
             this.Close();
-            frmMain main = new frmMain();
+           
            
             
         }

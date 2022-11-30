@@ -121,35 +121,39 @@ namespace C968BFM1
         {
             try
             {
-                if (Int32.Parse(txtPartSearch.Text) < 1)
+                int searchValue = int.Parse(txtPartSearch.Text);
+
+                if (searchValue < 1) return;
+
+                Part match = Inventory.LookupPart(Int32.Parse(txtPartSearch.Text));
+
+                if (searchValue > Inventory.AllParts.Count)
                 {
-                    MessageBox.Show("Please enter a positive number. ");
+                    MessageBox.Show("Cannot find part");
                     return;
                 }
-
-
-                Part matchingPart = Inventory.LookupPart(Int32.Parse(txtPartSearch.Text));
 
                 foreach (DataGridViewRow row in gridMainParts.Rows)
                 {
                     Part part = (Part)row.DataBoundItem;
-
-                    if (part.PartID == matchingPart.PartID)
+                    if (part.PartID == match.PartID)
                     {
                         row.Selected = true;
                         break;
+                       
                     }
                     else
                     {
+                       
                         row.Selected = false;
-
+                        
                     }
+
                 }
             }
-
             catch (Exception ex)
             {
-                MessageBox.Show("Could not find part.");
+                MessageBox.Show("Please ensure you are entering a Part ID.");
                 return;
             }
         }
@@ -158,18 +162,27 @@ namespace C968BFM1
         {
             try
             {
-                if (Decimal.Parse(txtProductSearch.Text) < 1)
+                int searchValue = Int32.Parse(txtProductSearch.Text);
+
+                if (searchValue < 1)
                 {
                     return;
                 }
 
-                Product matchingPart = Inventory.LookupProduct(Int32.Parse(txtProductSearch.Text));
+
+                Product matching = Inventory.LookupProduct(Int32.Parse(txtProductSearch.Text));
+
+                if (searchValue > Inventory.Products.Count)
+                {
+                    MessageBox.Show("Cannot find part");
+                    return;
+                }
 
                 foreach (DataGridViewRow row in gridMainProducts.Rows)
                 {
                     Product product = (Product)row.DataBoundItem;
 
-                    if (product.ProductID == matchingPart.ProductID)
+                    if (product.ProductID == matching.ProductID)
                     {
                         row.Selected = true;
                         break;
@@ -182,7 +195,7 @@ namespace C968BFM1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Could not find product.");
+                MessageBox.Show("Please ensure you are entering a Product ID.");
                 return;
             }
             
