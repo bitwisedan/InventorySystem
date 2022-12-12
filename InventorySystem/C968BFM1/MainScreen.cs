@@ -136,6 +136,12 @@ namespace C968BFM1
                 foreach (DataGridViewRow row in gridMainParts.Rows)
                 {
                     Part part = (Part)row.DataBoundItem;
+
+                    foreach (DataGridViewRow rows in gridMainParts.Rows)
+                    {
+                        rows.Selected = false;
+                    }
+
                     if (part.PartID == match.PartID)
                     {
                         row.Selected = true;
@@ -177,22 +183,29 @@ namespace C968BFM1
                     MessageBox.Show("Cannot find part");
                     return;
                 }
-
-                foreach (DataGridViewRow row in gridMainProducts.Rows)
+                
+                foreach (DataGridViewRow rows in gridMainProducts.Rows)
                 {
-                    Product product = (Product)row.DataBoundItem;
+                    Product product = (Product)rows.DataBoundItem;
+                    
+                    foreach(DataGridViewRow row in gridMainProducts.Rows)
+                    {
+                        row.Selected = false;
+                    }
 
                     if (product.ProductID == matching.ProductID)
-                    {
-                        row.Selected = true;
+                    { 
+                        rows.Selected = true;
                         break;
                     }
                     else
                     {
-                        row.Selected = false;
+                        rows.Selected = false;
                     }
+                   
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Please ensure you are entering a Product ID.");

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,6 +49,8 @@ namespace C968BFM1
             int maxStock;
             int invInStock;
             decimal price;
+            int machineID;
+            string company;
 
             try
             {
@@ -55,10 +58,20 @@ namespace C968BFM1
                 maxStock = Int32.Parse(txtAddPartMax.Text);
                 invInStock = Int32.Parse(txtAddPartInventory.Text);
                 price = Decimal.Parse(txtAddPartPrice.Text);
+
+                if (radAddPartInHouse.Checked)
+                {
+                    machineID = Int32.Parse(txtAddPartRadioChange.Text);
+                }
+                else
+                {
+                    company = txtAddPartRadioChange.Text;
+                }
             }
+       
             catch
             {
-                MessageBox.Show("Inventory, Price, Max and Min text fields must be numeric values.");
+                MessageBox.Show("Inventory, Price, Max, Machine ID, and Min text fields must be numeric values.");
                 return;
             }
 

@@ -28,8 +28,8 @@ namespace C968BFM1
 
             Part dummyPart1 = new InHousePart(1, "Part 1", 15.00m, 30, 10, 100, 111);
             Part dummyPart2 = new InHousePart(2, "Part 2", 12.00m, 25, 10, 100, 222);
-            Part dummyPart3 = new OutsourcedPart(3, "Part 4", 15.00m, 10, 10, 100, "Acme Co");
-            Part dummyPart4 = new OutsourcedPart(4, "Part 5", 12.00m, 25, 10, 100, "Acme Co");
+            Part dummyPart3 = new OutsourcedPart(3, "Part 3", 15.00m, 10, 10, 100, "Acme Co");
+            Part dummyPart4 = new OutsourcedPart(4, "Part 4", 12.00m, 25, 10, 100, "Acme Co");
             
 
             AllParts.Add(dummyPart1);

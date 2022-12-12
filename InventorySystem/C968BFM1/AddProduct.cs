@@ -63,7 +63,7 @@ namespace C968BFM1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in gridAddProdAss.Rows)
+            foreach (DataGridViewRow row in gridAddProdAss.SelectedRows)
             {
                 gridAddProdAss.Rows.RemoveAt(row.Index);
             }

@@ -71,19 +71,31 @@ namespace C968BFM1
             int maxStock;
             int invInStock;
             decimal price;
+            int machineID;
+            string company;
 
             try
             {
                 minStock = Int32.Parse(txtModifyPartMin.Text);
                 maxStock = Int32.Parse(txtModifyPartMax.Text);
                 invInStock = Int32.Parse(txtModifyPartInventory.Text);
-                price = Decimal.Parse(txtModifyPartPrice.Text.Substring(1));
+                price = Decimal.Parse(txtModifyPartPrice.Text);
+                if(radModifyPartInHouse.Checked) { 
+                    machineID = Int32.Parse(txtModifyPartRadioChange.Text);
+                }
+                else
+                {
+                    company = txtModifyPartRadioChange.Text;
+                }
+                
             }
             catch
             {
-                MessageBox.Show("Inventory, Price, Max and Min must be numeric values.");
+                MessageBox.Show("Inventory, Price,Machine ID, Max and Min must be numeric values.");
                 return;
             }
+            
+            
 
             int id = Int32.Parse(txtModifyPartID.Text);
             string name = txtModifyPartName.Text;
